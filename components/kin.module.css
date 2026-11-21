@@ -1,0 +1,132 @@
+.shell {
+  width: min(1160px, 100%);
+  margin-inline: auto;
+  padding: 0 clamp(16px, 4vw, 48px) 36px;
+  color: #19192a;
+  text-align: left;
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+}
+.header {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #dddbea;
+}
+.brand, .status, .sessionActions, .sessionActions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand { font-size: 25px; font-weight: 800; letter-spacing: -.045em; }
+.brand svg { color: #5c39c9; }
+.status { color: #4c4961; font-size: 14px; }
+.headerRight { display: flex; align-items: center; gap: 18px; }
+.account { display: inline-flex; align-items: center; gap: 8px; color: #353246; font-size: 13px; }
+.account span, .account img { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: #e8ddff; color: #5c39c9; font-size: 11px; font-weight: 800; object-fit: cover; }
+.account b { font-weight: 700; }
+.accountBackdrop { position: fixed; inset: 0; z-index: 30; display: grid; place-items: start end; padding: 80px clamp(16px, 4vw, 48px) 20px; background: rgba(28, 24, 48, .16); backdrop-filter: blur(6px); }
+.accountModal { position: relative; width: min(410px, 100%); padding: 30px; border: 1px solid #ddd8eb; border-radius: 26px; background: #fff; box-shadow: 0 24px 80px rgba(45, 30, 86, .22); }
+.accountClose { position: absolute; top: 15px; right: 15px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: #6d687e; }
+.accountClose:hover { background: #f3f0fa; }
+.accountEyebrow { color: #7565bd; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.accountModal h2 { margin-top: 10px; color: #1b1930; font-size: 28px; font-weight: 800; letter-spacing: -.055em; line-height: 1.05; }
+.accountHero { display: flex; align-items: center; gap: 14px; padding-right: 24px; }
+.accountHero > span, .accountHero img { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: #e8ddff; color: #5c39c9; font-weight: 800; object-fit: cover; }
+.accountHero p:last-child { margin-top: 4px; color: #6f6b7d; font-size: 13px; overflow-wrap: anywhere; }
+.accountCopy { margin-top: 12px; color: #605b70; font-size: 15px; line-height: 1.55; }
+.googleButton, .accountSignOut { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 24px; padding: 13px 16px; border-radius: 999px; font-size: 15px; font-weight: 750; }
+.googleButton { background: #1f1b32; color: white; }
+.googleButton:hover { background: #302750; }
+.googleMark { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #fff; color: #4285f4; font-size: 14px; font-weight: 900; }
+.accountConnected { display: flex; gap: 10px; margin-top: 24px; padding: 13px; border-radius: 15px; background: #e5f5ed; color: #2f7053; font-size: 14px; }
+.accountConnected p { margin-top: 3px; color: #557a67; font-size: 12px; line-height: 1.45; }
+.accountSignOut { background: #f1eff7; color: #4a4460; }
+.accountSignOut:hover { background: #e8e3f4; }
+.accountError { margin-top: 12px; color: #a03c49; font-size: 13px; line-height: 1.4; }
+.accountFineprint { margin-top: 18px; color: #8b8798; font-size: 12px; line-height: 1.45; text-align: center; }
+.home, .room {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 4vw, 48px);
+  margin-top: 32px;
+}
+.intro { align-self: center; padding-block: 12px; }
+.intro h1 {
+  font-size: clamp(64px, 10vw, 128px);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.085em;
+}
+.intro p { margin-top: 24px; max-width: 32ch; color: #4c4961; font-size: 18px; line-height: 1.55; }
+.stage, .call {
+  border-radius: 28px;
+  background: radial-gradient(ellipse at 55% 30%, #aa91ff 0%, #7958df 42%, #3f2693 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 330px;
+  padding: 24px;
+  color: white;
+}
+.signal { height: 152px; display: flex; align-items: center; gap: clamp(5px, 1vw, 12px); }
+.signal span {
+  width: clamp(12px, 2.5vw, 28px);
+  border-radius: 999px;
+  background: #f1eaff;
+  animation: sway 4s ease-in-out infinite alternate;
+}
+@keyframes sway { from { transform: scaleY(.78); } to { transform: scaleY(1.08); } }
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #f8ffb8;
+  color: #252039;
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-size: 17px;
+  font-weight: 750;
+  transition: background .2s, transform .2s;
+}
+.start:hover:not(:disabled) { background: white; transform: translateY(-2px); }
+.start:disabled { cursor: wait; }
+.hint { margin-top: 12px; font-size: 13px; text-align: center; }
+.error { margin-top: 20px; padding: 14px 16px; border-radius: 14px; background: #ffe8e5; color: #792b2b; overflow-wrap: anywhere; }
+.examples { margin-top: 32px; }
+.examples h2 { margin-bottom: 12px; font-size: 17px; font-weight: 750; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.cards article { padding: 18px; border-radius: 18px; }
+.cards h3 { margin-top: 10px; font-weight: 750; }
+.cards p { margin-top: 4px; color: #474154; font-size: 14px; line-height: 1.45; }
+.peach { background: #ffe9dc; }
+.lilac { background: #ebe3ff; }
+.mint { background: #ddf3e9; }
+.sessionActions { flex-wrap: wrap; justify-content: flex-end; }
+.sessionActions button { padding: 10px 14px; border-radius: 999px; background: #ffe7e7; color: #782535; font-size: 14px; font-weight: 700; }
+.sessionActions button:hover { background: #ffd5db; }
+.call { min-height: 430px; justify-content: space-between; }
+.call h1 { font-size: 22px; font-weight: 750; }
+.visualizer { display: grid; place-items: center; width: 100%; min-height: 180px; }
+.transcript { min-width: 0; height: 430px; }
+.diagnostics { margin-top: 20px; color: #4c4961; font-size: 14px; }
+.diagnostics summary { cursor: pointer; width: fit-content; }
+.shell button:focus-visible, .shell summary:focus-visible { outline: 3px solid #a274f5; outline-offset: 4px; }
+@media (max-width: 700px) {
+  .account b, .status { display: none; }
+  .home, .room { grid-template-columns: 1fr; margin-top: 18px; }
+  .intro h1 br { display: none; }
+  .intro h1 { font-size: clamp(42px, 10vw, 70px); }
+  .intro p { margin-top: 14px; font-size: 16px; }
+  .stage { min-height: 250px; }
+  .signal { height: 125px; }
+  .cards { grid-template-columns: 1fr; }
+  .call { min-height: 345px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signal span { animation: none; }
+  .start { transition: none; }
+}
