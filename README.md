@@ -21,7 +21,7 @@ Planned work includes persistent shared plans, agent tools, Google Calendar, a C
 Requirements are Node.js 22 or newer and npm.
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/vinay1668/kin.git
 cd kin
 cp .env.example .env
 npm install
